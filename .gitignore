@@ -42,5 +42,7 @@ htmlcov/
 *.swp
 *.swo
 
-# uv.lock is committed for reproducibility
-# .python-version is committed
+# uv.lock — no longer used (migrated to poetry)
+uv.lock
+
+# poetry.lock is committed for reproducibility
