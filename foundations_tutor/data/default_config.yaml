@@ -1,0 +1,16 @@
+tutor:
+  model: claude-sonnet-4-6
+  session_cost_cap: 1.00
+  cost_warning_threshold: 0.80
+  mastery_thresholds:
+    introduced: 1
+    practicing: 0.60
+    proficient: 0.70
+    mastered: 0.80
+    teaching: 14
+math:
+  starting_level: high_school
+  physics_analogies: true
+display:
+  read_only_without_key: true
+identity_file: null

@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "foundations-tutor"
+version = "0.1.0"
+description = "AI-powered tutor for foundational LLM papers with progressive math scaffolding"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+authors = [{ name = "Chocaholic Monk", email = "tylerjhayden@gmail.com" }]
+
+dependencies = [
+    "anthropic>=0.45.0",
+    "streamlit>=1.42.0,<2.0",
+    "pyyaml>=6.0",
+    "pydantic>=2.0,<3.0",
+    "fsrs>=6.0,<7.0",
+    "networkx>=3.0",
+    "pyvis>=0.3",
+    "python-dotenv>=1.0",
+    "click>=8.0",
+]
+
+[project.scripts]
+foundations-tutor = "foundations_tutor.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/tylerjhayden/foundations-tutor"
+
+[tool.hatch.build.targets.wheel]
+packages = ["foundations_tutor"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"foundations_tutor/data" = "foundations_tutor/data"
+
+[dependency-groups]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.24"]
