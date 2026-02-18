@@ -2,6 +2,7 @@
 
 # Phase P2: implement multi-turn Socratic tutoring with tool use.
 """
+
 from __future__ import annotations
 
 
@@ -12,5 +13,5 @@ class TutorAgent:
         self.model = model
         self.api_key = api_key
 
-    def start_session(self, paper_id: str, identity: str | None = None) -> "TutorSession":  # noqa: F821
+    def start_session(self, paper_id: str, identity: str | None = None) -> TutorSession:  # noqa: F821
         raise NotImplementedError("Phase P2")

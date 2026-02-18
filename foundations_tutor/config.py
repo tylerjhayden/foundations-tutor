@@ -2,13 +2,13 @@
 
 Phase P1: first-run directory creation and config loading.
 """
+
 from __future__ import annotations
 
 from pathlib import Path
 
 import yaml
 from pydantic import BaseModel, Field
-
 
 CONFIG_DIR = Path.home() / ".foundations-tutor"
 USER_CONFIG = CONFIG_DIR / "config.yaml"
@@ -51,6 +51,7 @@ def _first_run_setup() -> None:
     CONFIG_DIR.mkdir(parents=True, exist_ok=True)
     if not USER_CONFIG.exists():
         import shutil
+
         shutil.copy(DEFAULT_CONFIG, USER_CONFIG)
 
 

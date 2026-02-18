@@ -2,6 +2,7 @@
 
 # Phase P1: render parts and papers from catalog.yaml.
 """
+
 import streamlit as st
 
 

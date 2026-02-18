@@ -2,13 +2,13 @@
 
 Phase P1: loads catalog.yaml + relationships.yaml for the catalog page.
 """
+
 from __future__ import annotations
 
 from dataclasses import dataclass, field
 from pathlib import Path
 
 import yaml
-
 
 DATA_DIR = Path(__file__).parent.parent / "data"
 
@@ -35,7 +35,7 @@ class Part:
 class Relationship:
     source: str  # paper id
     target: str  # paper id
-    kind: str    # "builds_on", "contrasts_with", etc.
+    kind: str  # "builds_on", "contrasts_with", etc.
 
 
 def load_catalog() -> dict[str, Part]:
@@ -44,9 +44,14 @@ def load_catalog() -> dict[str, Part]:
     parts: dict[str, Part] = {}
     for part_id, part_data in (raw.get("parts") or {}).items():
         papers = [
-            Paper(id=p["id"], title=p["title"], year=p.get("year", 0),
-                  authors=p.get("authors", []), arxiv=p.get("arxiv"),
-                  tags=p.get("tags", []))
+            Paper(
+                id=p["id"],
+                title=p["title"],
+                year=p.get("year", 0),
+                authors=p.get("authors", []),
+                arxiv=p.get("arxiv"),
+                tags=p.get("tags", []),
+            )
             for p in (part_data.get("papers") or [])
         ]
         parts[part_id] = Part(

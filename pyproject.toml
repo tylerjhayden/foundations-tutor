@@ -36,4 +36,15 @@ packages = ["foundations_tutor"]
 "foundations_tutor/data" = "foundations_tutor/data"
 
 [dependency-groups]
-dev = ["pytest>=8.0", "pytest-asyncio>=0.24"]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.24", "pre-commit>=4.0", "ruff>=0.9", "detect-secrets>=1.5"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "B", "UP", "RUF"]
+ignore = ["E501"]  # line length handled by ruff-format
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"

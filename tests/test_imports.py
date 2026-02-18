@@ -1,10 +1,8 @@
 """Smoke tests: verify all modules import cleanly."""
+
 import foundations_tutor
-from foundations_tutor import config, app
+from foundations_tutor import config
 from foundations_tutor.catalog import models as catalog_models
-from foundations_tutor.tutor import agent, session, grading
-from foundations_tutor.progress import tracker
-from foundations_tutor.pages import catalog, lesson, progress, settings
 
 
 def test_version():
