@@ -42,6 +42,12 @@ htmlcov/
 *.swp
 *.swo
 
+# Minerva — personal AI config, not project code
+.claude/
+CLAUDE.md
+CLAUDE-MINERVA.md
+history
+
 # uv.lock — no longer used (migrated to poetry)
 uv.lock
 
