@@ -52,3 +52,6 @@ history
 uv.lock
 
 # poetry.lock is committed for reproducibility
+
+# Internal planning — lives in foundations-tutor-internal
+implementation-plan.md
